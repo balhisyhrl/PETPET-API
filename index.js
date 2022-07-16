@@ -54,11 +54,11 @@ app.use('/', async (req, res, next) => {
             msg: "Cannot GET FILE"
         })
         try{
-            let filename = petpet + ".gif"
+            let filename = petpet
             //await fs.writeFileSync(`./tmp/${filename}`, animatedGif)
-            let imggiff = filename
+            //let imggiff = filename
             //express.static(__dirname + `/tmp/${imggiff}`)
-            fs.readFile(__dirname + `/tmp/${imggiff}`, function(err, data) {
+            fs.readFile(__dirname + `/tmp/${filename}`, function(err, data) {
                 res.writeHead(200, {'content-type':'image/gif'})
                 res.end(data)
             })

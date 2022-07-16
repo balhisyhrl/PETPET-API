@@ -4,8 +4,6 @@ const cors = require('cors')
 const secure = require('ssl-express-www')
 const fs = require('fs')
 const petPetGif = require('pet-pet-gif')
-//const main = require('./routes/main')
-const apirouter = require('./routes/api')
 
 const app = express();
 const PORT = process.env.PORT || 8080 || 5000 || 3000

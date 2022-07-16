@@ -21,29 +21,32 @@ app.use('/', async (req, res, next) => {
     if(!petpet) return res.json({
       status: false,
       creator: `Balhisyhrl`,
-      msg: "Cannot GET parameter url"
+      github: `https://github.com/balhisyhrl`,
+      msg: "Cannot GET parameter url",
+      example: "https://anon-petpet.herokuapp.com/?url=https://upload.wikimedia.org/wikipedia/en/3/3d/480px-Gawr_Gura_-_Portrait_01.png"
       })
     try{
       let animatedGif = await petPetGif(petpet)
-      res.status(200).send(animatedGif)
-      //let filename = "./tmp/Anon-BOT-" + new Date().getTime() + + Math.floor(Math.random() * 999)+'.gif'
-      //await fs.writeFileSync(filename, animatedGif)
-      //let imggiff = filename
-      /*res.json({
+      let filename = "Anon-BOT-" + new Date().getTime() + + Math.floor(Math.random() * 999)+'.gif'
+      await fs.writeFileSync(`./tmp/${filename}`, animatedGif)
+      let imggiff = filename
+      res.json({
         status: true,
         creator: `Balhisyhrl`,
-        result: "https://anon-petpetgif.herokuapp.com/" + imggiff
-      })*/
+        github: `https://github.com/balhisyhrl`,
+        result: "https://anon-petpet.herokuapp.com/tmp/" + imggiff
+      })
     //fs.unlinkSync(filename)
     } catch(e){
-      console.log(e)
+      //console.log(e)
       res.json({
         status: false,
         creator: `Balhisyhrl`,
-        msg: "Cannot GET parameter url"
+        github: `https://github.com/balhisyhrl`,
+        msg: "Cannot GET parameter url",
+        example: "https://anon-petpet.herokuapp.com/?url=https://upload.wikimedia.org/wikipedia/en/3/3d/480px-Gawr_Gura_-_Portrait_01.png"
     })}
 })
-app.use('/api', apirouter)
 
 app.listen(PORT, () => {
     console.log("Server running on port " + PORT)

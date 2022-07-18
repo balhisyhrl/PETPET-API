@@ -35,7 +35,6 @@ app.use('/', async (req, res, next) => {
                 github: `https://github.com/balhisyhrl`,
                 result: "https://anon-petpet.herokuapp.com/?file=" + imggiff
         })
-            //fs.unlinkSync(filename)
         } catch(e){
             //console.log(e)
             res.json({
@@ -55,16 +54,12 @@ app.use('/', async (req, res, next) => {
         })
         try{
             let filename = petpet
-            //await fs.writeFileSync(`./tmp/${filename}`, animatedGif)
-            //let imggiff = filename
-            //express.static(__dirname + `/tmp/${imggiff}`)
             fs.readFile(__dirname + `/tmp/${filename}`, function(err, data) {
                 res.writeHead(200, {'content-type':'image/gif'})
                 res.end(data)
             })
-            //fs.unlinkSync(filename)
         } catch(e){
-                //console.log(e)
+            //console.log(e)
             res.json({
                 status: false,
                 creator: `Balhisyhrl`,
@@ -78,7 +73,7 @@ app.use('/', async (req, res, next) => {
             github: `https://github.com/balhisyhrl`,
             msg: "Cannot GET parameter url or File",
             example_petpet: "https://anon-petpet.herokuapp.com/?url=https://upload.wikimedia.org/wikipedia/en/3/3d/480px-Gawr_Gura_-_Portrait_01.png",
-            example_get_petpet: "https://anon-petpet.herokuapp.com/?file=Anon-BOT-165795955795822"
+            example_get_petpet: "https://anon-petpet.herokuapp.com/?file=Anon-BOT-165795955795822.gif"
         })
     }
 })

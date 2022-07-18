@@ -1,7 +1,7 @@
 {
-    "name": "PETPET-Api",
+    "name": "PETPET-API",
     "version": "1.0.0",
-    "description": "res api website",
+    "description": "rest api website",
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@github.com/balhisyhrl/PETPET-Api.git"
+        "url": "git+ssh://git@github.com/balhisyhrl/PETPET-API.git"
     },
     "author": "Balhisyhrl",
     "license": "GNU",
